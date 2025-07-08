@@ -29,7 +29,7 @@ class AINewsNode:
         days_map = {'daily': 1, 'weekly': 7, 'monthly': 30, 'year': 366}
 
         response = self.tavily.search(
-            query="Top Artificial Intelligence (AI) technology news India and globally",
+            query="Top Artificial Intelligence (AI) technology news Europe and globally",
             topic="news",
             time_range=time_range_map[frequency],
             include_answer="advanced",
@@ -58,7 +58,7 @@ class AINewsNode:
 
         prompt_template = ChatPromptTemplate.from_messages([
             ("system", """Summarize AI news articles into markdown format. For each item include:
-            - Date in **YYYY-MM-DD** format in IST timezone
+            - Date in **DD-MM-YYYY** format in EAST EUROPE timezone
             - Concise sentences summary from latest news
             - Sort news by date wise (latest first)
             - Source URL as link
